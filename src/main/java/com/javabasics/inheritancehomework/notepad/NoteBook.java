@@ -23,7 +23,13 @@ public class NoteBook {
     }
 
     public void addNote(Note note) {
+        notes.add(note);
+    }
 
+    public void print() {
+        for(Note note : notes){
+            System.out.println(note.toString());
+        }
     }
 
     @Override
