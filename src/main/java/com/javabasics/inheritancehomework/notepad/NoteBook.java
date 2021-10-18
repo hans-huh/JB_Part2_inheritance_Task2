@@ -26,12 +26,6 @@ public class NoteBook {
         notes.add(note);
     }
 
-    public void print() {
-        for(Note note : notes){
-            System.out.println(note.toString());
-        }
-    }
-
     @Override
     public String toString() {
         StringBuilder tempString = new StringBuilder();
