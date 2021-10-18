@@ -1,7 +1,7 @@
 package com.javabasics.inheritancehomework.notepad;
 
 public final class NoteBookProvider {
-    private static NoteBook noteBook;
+    private NoteBook noteBook;
     private static NoteBookProvider noteBookProviderSingleton;
 
     private NoteBookProvider(){
@@ -15,7 +15,7 @@ public final class NoteBookProvider {
         return noteBookProviderSingleton;
     }
 
-    public static NoteBook getNoteBook(){
+    public NoteBook getNoteBook(){
         return noteBook;
     }
 }

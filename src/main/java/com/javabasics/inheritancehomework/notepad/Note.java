@@ -5,32 +5,36 @@ import java.util.Objects;
 
 public class Note {
     private Date noteCreatedDateTime;
-    private String noteContent;
+    private String text;
 
     public Note() {
         noteCreatedDateTime = new Date();
     }
 
-    public Note(String noteContent) {
+    public Note(String text) {
         noteCreatedDateTime = new Date();
-        this.noteContent = noteContent;
+        this.text = text;
     }
 
-    public Note(String noteContent, Date noteCreatedDateTime){
+    public Note(String text, Date noteCreatedDateTime){
         this.noteCreatedDateTime = noteCreatedDateTime;
-        this.noteContent = noteContent;
+        this.text = text;
     }
 
     public Date getNoteCreatedDateTime(){
         return noteCreatedDateTime;
     }
 
-    public void setNoteContent(String noteContent) {
-        this.noteContent = noteContent;
+    public void setNoteCreatedDateTime(Date date) {
+        this.noteCreatedDateTime = date;
     }
 
-    public String getNoteContent(){
-        return noteContent;
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getText(){
+        return text;
     }
 
     @Override
@@ -39,17 +43,17 @@ public class Note {
         if (o == null) return false;
         if (getClass() != o.getClass()) return false;
         Note note = (Note) o;
-        return Objects.equals(noteCreatedDateTime, note.getNoteCreatedDateTime()) && noteContent.equals(note.getNoteContent());
+        return Objects.equals(noteCreatedDateTime, note.getNoteCreatedDateTime()) && text.equals(note.getText());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(noteCreatedDateTime, noteContent);
+        return Objects.hash(noteCreatedDateTime, text);
     }
 
     @Override
     public String toString() {
-        return "\"" + noteContent + "\"" +
+        return "\"" + text + "\"" +
                 ", created on " + noteCreatedDateTime;
     }
 }
