@@ -18,8 +18,8 @@ public class NoteBook {
         return notes;
     }
 
-    public void setNotes(List<Note> noteBook) {
-        this.notes = noteBook;
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
 
     public void addNote(Note note) {
