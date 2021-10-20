@@ -5,8 +5,8 @@ import com.javabasics.inheritancehomework.calls.Response;
 import com.javabasics.inheritancehomework.notepad.NoteBookProvider;
 
 
-public class CreateCommand extends Command{
-    public CreateCommand(){
+public class CreateNotebookCommand extends Command{
+    public CreateNotebookCommand(){
         super();
     }
 
