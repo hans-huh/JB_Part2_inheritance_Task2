@@ -11,7 +11,7 @@ public class CreateNotebookCommand extends Command{
     }
 
     @Override
-    public Response execute(Request request){
+    public Response execute(){
         NoteBookProvider.getNoteBookProvider().getNoteBook();
         return new Response(true);
     }

@@ -10,14 +10,14 @@ import java.util.Date;
 
 
 public class AddNoteCommand extends Command{
-    public AddNoteCommand(NoteBook notebook){
-        super(notebook);
+    public AddNoteCommand(Request request){
+        super(request);
     }
 
     @Override
-    public Response execute(Request request){
-        notebook = NoteBookProvider.getNoteBookProvider().getNoteBook();
-        notebook.addNote(new Note(request.getRequestString(), new Date()));
+    public Response execute(){
+        NoteBookProvider.getNoteBookProvider().getNoteBook().addNote(new Note(super.getRequest().getRequestString(),
+                new Date()));
         return new Response(true);
     }
 

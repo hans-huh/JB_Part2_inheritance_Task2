@@ -7,12 +7,12 @@ import com.javabasics.inheritancehomework.utils.NotebookSaver;
 
 
 public class SaveToFileCommand extends Command{
-    public SaveToFileCommand(NoteBook notebook){
-        super(notebook);
+    public SaveToFileCommand(Request request){
+        super(request);
     }
 
-    public Response execute(Request request){
-        NotebookSaver.saveNotebookToFile(request.getRequestString());
+    public Response execute(){
+        NotebookSaver.saveNotebookToFile(super.getRequest().getRequestString());
         return new Response(true);
     }
 }

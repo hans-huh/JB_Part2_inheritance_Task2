@@ -7,13 +7,14 @@ import com.javabasics.inheritancehomework.notepad.NoteBookProvider;
 import com.javabasics.inheritancehomework.utils.NotebookLoader;
 
 public class LoadFromFileCommand extends Command{
-    public LoadFromFileCommand(NoteBook notebook){
-        super(notebook);
+    public LoadFromFileCommand(Request request){
+        super(request);
     }
 
     @Override
-    public Response execute(Request request){
-        NoteBookProvider.getNoteBookProvider().setNoteBook(NotebookLoader.loadNotebook(request.getRequestString()));
+    public Response execute(){
+        NoteBookProvider.getNoteBookProvider().setNoteBook(NotebookLoader.
+                loadNotebook(super.getRequest().getRequestString()));
         return new Response(true);
     }
 }

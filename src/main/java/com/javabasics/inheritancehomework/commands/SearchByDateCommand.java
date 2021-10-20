@@ -11,15 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchByDateCommand extends Command {
-    public SearchByDateCommand(NoteBook notebook){
-        super(notebook);
+    public SearchByDateCommand(Request request){
+        super(request);
     }
 
     @Override
-    public Response execute(Request request){
+    public Response execute(){
         List<Note> output = new ArrayList<>();
         for(Note note : NoteBookProvider.getNoteBookProvider().getNoteBook().getNotes()){
-            if(DateStringConverter.convertDateToString(note.getNoteCreatedDateTime()).contains(request.getRequestString())){
+            if(DateStringConverter.convertDateToString(note.getNoteCreatedDateTime())
+                    .contains(super.getRequest().getRequestString())){
                 output.add(note);
             }
         }

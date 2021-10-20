@@ -6,14 +6,17 @@ import com.javabasics.inheritancehomework.notepad.NoteBook;
 
 
 public abstract class Command {
-    protected NoteBook notebook;
-
-    public Command(NoteBook notebook){
-        this.notebook = notebook;
+    private Request request;
+    public Command(Request request){
+        this.request = request;
     }
 
     public Command(){}
 
-    public abstract Response execute(Request request);
+    public Request getRequest(){
+        return request;
+    }
+
+    public abstract Response execute();
 }
 

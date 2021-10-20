@@ -10,15 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchByTextCommand extends Command{
-    public SearchByTextCommand(NoteBook notebook){
-        super(notebook);
+    public SearchByTextCommand(Request request){
+        super(request);
     }
 
     @Override
-    public Response execute(Request request){
+    public Response execute(){
         List<Note> output = new ArrayList<>();
             for(Note note : NoteBookProvider.getNoteBookProvider().getNoteBook().getNotes()){
-                if(note.getText().contains(request.getRequestString())){
+                if(note.getText().contains(super.getRequest().getRequestString())){
                     output.add(note);
                 }
             }
