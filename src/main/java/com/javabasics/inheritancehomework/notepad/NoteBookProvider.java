@@ -18,4 +18,8 @@ public final class NoteBookProvider {
     public NoteBook getNoteBook(){
         return noteBook;
     }
+
+    public void setNoteBook(NoteBook noteBook){
+        this.noteBook = noteBook;
+    }
 }
