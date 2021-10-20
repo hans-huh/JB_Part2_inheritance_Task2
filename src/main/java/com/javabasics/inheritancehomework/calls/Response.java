@@ -3,20 +3,20 @@ package com.javabasics.inheritancehomework.calls;
 import com.javabasics.inheritancehomework.notepad.NoteBook;
 import com.javabasics.inheritancehomework.notepad.NoteBookProvider;
 
-public class Request {
-    private String requestString;
+public class Response {
+    private boolean result;
     private NoteBook notebook;
 
-    public Request(String requestString) {
-        this.requestString = requestString;
+    public Response(boolean result) {
+        this.result = result;
         notebook = NoteBookProvider.getNoteBookProvider().getNoteBook();
     }
 
-    public String getRequestString() {
-        return requestString;
+    public boolean getResponseResult(){
+        return result;
     }
 
-    public NoteBook getNotebook(){
+    public NoteBook getResponseNotebook(){
         return notebook;
     }
 }
