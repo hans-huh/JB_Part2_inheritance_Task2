@@ -15,8 +15,8 @@ public class TestNoteClass {
     public void createObjectWithNotParameterizedConstructor(){
         note = new Note();
         Assert.assertNotNull("Instance not created! ", note);
-        note.setNoteContent(VALUE_TO_STORE_IN_NOTE);
-        Assert.assertEquals("Unexpected note content!", VALUE_TO_STORE_IN_NOTE, note.getNoteContent());
+        note.setText(VALUE_TO_STORE_IN_NOTE);
+        Assert.assertEquals("Unexpected note content!", VALUE_TO_STORE_IN_NOTE, note.getText());
         Assert.assertNotNull("Date not created!", note.getNoteCreatedDateTime());
     }
 
@@ -24,7 +24,7 @@ public class TestNoteClass {
     public void createObjectWithParameterizedConstructor(){
         note = new Note(VALUE_TO_STORE_IN_NOTE);
         Assert.assertNotNull("Instance not created! ", note);
-        Assert.assertEquals("Unexpected note content!", VALUE_TO_STORE_IN_NOTE, note.getNoteContent());
+        Assert.assertEquals("Unexpected note content!", VALUE_TO_STORE_IN_NOTE, note.getText());
         Assert.assertNotNull("Date not created!", note.getNoteCreatedDateTime());
     }
 
@@ -40,7 +40,7 @@ public class TestNoteClass {
     public void testOverriddenHashMethod(){
         note = new Note(VALUE_TO_STORE_IN_NOTE);
         Assert.assertEquals("Unexpected hash value!",
-                Objects.hash(note.getNoteCreatedDateTime(), note.getNoteContent()), note.hashCode());
+                Objects.hash(note.getNoteCreatedDateTime(), note.getText()), note.hashCode());
     }
 
     @Test
@@ -55,6 +55,6 @@ public class TestNoteClass {
         Assert.assertFalse("Comparing to instance of another class returns TRUE, expected FALSE", note.equals(new Date()));
         Assert.assertTrue("Comparing to the same instance returns FALSE, expected TRUE", note.equals(sameNote));
         Assert.assertTrue("Comparing two identical objects returns FALSE, expected TRUE",
-                note.equals(new Note(note.getNoteContent(), note.getNoteCreatedDateTime())));
+                note.equals(new Note(note.getText(), note.getNoteCreatedDateTime())));
     }
 }
